@@ -33,7 +33,7 @@ middleware.enableAll(app);
 
 app.shortcut("deepl-translation", async ({ ack, body, client }) => {
   //await ack();
-  ack({
+  await ack({
   response_action: "errors",
   errors: errors
 });
