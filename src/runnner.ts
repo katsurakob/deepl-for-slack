@@ -16,7 +16,7 @@ const lanaguageOptions: Option[] = orderedLangNames.filter(l => langToReaction[l
 
 export async function openModal(client: WebClient, triggerId: string) {
   await client.views.open({
-    trigger_id: body.triggerId,
+    trigger_id: triggerId,
     view: buildNewModal(orderedLangNames[0])
   });
 }
