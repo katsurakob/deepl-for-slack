@@ -33,16 +33,7 @@ middleware.enableAll(app);
 
 app.shortcut("deepl-translation", async ({ ack, body, client }) => {
   await ack();
-  // await runner.openModal(client, body.trigger_id);
-   try {
-    app.client.views.open({
-      token: context.botToken,
-      trigger_id: body.trigger_id,
-      view: require(modalView)
-    });
-  } catch (e) {
-    console.log(e);
-  }
+  await runner.openModal(client, body.trigger_id);
 });
 
 app.view("run-translation", async ({ ack, client, body }) => {
