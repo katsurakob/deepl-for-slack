@@ -31,15 +31,10 @@ middleware.enableAll(app);
 // shortcut
 // -----------------------------
 
-app.shortcut("deepl-translation", async ({ ack, body, client }) => {
-   try {
-    // Acknowledge shortcut request
+app.shortcut("deepl-translation", (async ({ ack, body, client }) => {
     await ack();
-    await runner.openModal(client, body.trigger_id);
-   }
-     catch (error) {
-     console.error(error!);
-  }
+    await runner.openModal(client, body.trigger_id);)()
+    .catch(e => console.error(e));
 });
 
 app.view("run-translation", async ({ ack, client, body }) => {
