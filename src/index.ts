@@ -36,6 +36,7 @@ app.shortcut("deepl-translation", async ({ ack, body, client }) => {
     // Acknowledge shortcut request
     await ack();
   await runner.openModal(client, body.trigger_id);
+   }
      catch (error) {
     console.error(error);
   }
