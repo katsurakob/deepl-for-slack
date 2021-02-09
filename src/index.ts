@@ -37,6 +37,7 @@ app.shortcut("deepl-translation", async ({ ack, body, client }) => {
 });
 
 app.view("run-translation", async ({ ack, client, body }) => {
+  await ack();
   const text = body.view.state.values.text.a.value;
   const lang = body.view.state.values.lang.a.selected_option.value;
 
